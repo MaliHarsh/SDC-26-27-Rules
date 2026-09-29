@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PODIUM CY2027 Team Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--ink:#16202e;--mut:#5b6675;--line:#d8dde5;--teal:#1f7a8c;--red:#e03a2f;--gold:#b8860b;--soft:#e8f1f3;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1620;--card:#18222f;--ink:#e8edf3;--mut:#9aa6b5;--line:#2b3849;--teal:#4fb3c6;--red:#ff6b5f;--gold:#e0b23a;--soft:#1c2e38}}
+:root[data-theme="dark"]{--bg:#0f1620;--card:#18222f;--ink:#e8edf3;--mut:#9aa6b5;--line:#2b3849;--teal:#4fb3c6;--red:#ff6b5f;--gold:#e0b23a;--soft:#1c2e38}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Barlow,system-ui,sans-serif}
+header{padding:20px 20px 12px;border-bottom:4px solid var(--red)}
+h1{font:700 34px/1 'Barlow Condensed',Barlow,sans-serif;margin:0;letter-spacing:.5px}
+header p{margin:4px 0 0;color:var(--mut)}
+nav{display:flex;gap:6px;overflow-x:auto;padding:10px 14px;background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:env(safe-area-inset-top,0px);z-index:5}
+nav button,.sub button{font:600 15px Barlow,sans-serif;border:1px solid var(--line);background:transparent;color:var(--ink);padding:7px 13px;border-radius:6px;cursor:pointer;white-space:nowrap}
+nav button[aria-selected=true]{background:var(--teal);color:#fff;border-color:var(--teal)}
+nav button.team{border-color:var(--red)}nav button.team[aria-selected=true]{background:var(--red);border-color:var(--red)}
+.sub{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 16px}.sub button[aria-selected=true]{background:var(--ink);color:var(--bg)}
+button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+main{max-width:920px;margin:0 auto;padding:20px 16px 60px}
+section[hidden],.dp[hidden]{display:none}
+h2{font:700 28px 'Barlow Condensed',sans-serif;margin:0 0 12px}h3{font:700 20px 'Barlow Condensed',sans-serif;margin:22px 0 6px;color:var(--teal)}
+.box{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:14px 16px;margin:12px 0}
+.key{border-left:5px solid var(--red)}.ok{border-left:5px solid var(--teal)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+.stat{background:var(--soft);border-radius:8px;padding:10px 12px}.stat b{display:block;font:700 26px 'Barlow Condensed',sans-serif}
+ul{padding-left:20px;margin:6px 0}li{margin:3px 0}
+.tw{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:15px}th,td{border:1px solid var(--line);padding:6px 9px;text-align:left}th{background:var(--soft)}
+svg{max-width:100%;height:auto;display:block;margin:10px auto}
+svg text{font:11px Barlow,sans-serif;fill:var(--ink)}svg .f{fill:var(--soft);stroke:var(--teal);stroke-width:1.5}svg .l{stroke:var(--teal);stroke-width:2;fill:none}svg .o{fill:var(--gold)}svg .r{stroke:var(--red);stroke-width:2.5}svg .d{stroke:var(--mut);stroke-dasharray:4 3;fill:none}
+.cap{font-size:13px;color:var(--mut);text-align:center;margin:0 0 8px}
+.tag{display:inline-block;font-size:13px;font-weight:600;padding:1px 8px;border-radius:10px;background:var(--red);color:#fff}
+.wb{font-family:'Barlow',cursive;background:var(--card);border:2px dashed var(--line);border-radius:8px;padding:12px 16px}
+summary{cursor:pointer;font-weight:700}
+</style></head><body>
+<header><h1>PODIUM · CY2027 Team Guide</h1><p>ASME Student Design Competition · Stage 1 of the Engineering Games · Rules v1.0 (Aug 2026)</p></header>
+<nav id="nav" role="tablist"></nav>
+<main id="main">
+
+<section id="start" data-t="Start here">
+<h2>The 60-second version</h2>
+<p>PODIUM is a track-meet style contest. One robot competes in five Disciplines; your <b>All-Around Score</b> is the sum of your best score in each (max <b>700</b>). Every run is 2:30: <b>30 s autonomous</b>, then <b>2 min driven</b>. No practice runs, one run per Discipline.</p>
+<div class="grid">
+<div class="stat"><b>40 cm cube</b>Start size, robot alone</div>
+<div class="stat"><b>15 kg</b>Max weight as competed</div>
+<div class="stat"><b>24 V</b>Max per battery and system</div>
+<div class="stat"><b>60 psi</b>Max pneumatic pressure</div>
+<div class="stat"><b>4 people</b>Crew at the Field</div>
+<div class="stat"><b>700</b>Max All-Around Score</div>
+</div>
+<div class="box key"><b>Non-negotiables.</b> Must pass inspection before the first run. No flight, no combustion. Safety eyewear (Z87 / EN166) for everyone. Fire-safe battery bag. Ascent anchor point on the robot. You must be checked in on time or you are disqualified.</div>
+<h3>Points at stake</h3>
+<div class="tw"><table><tr><th>Discipline</th><th>Focus</th><th>Max</th></tr>
+<tr><td>Sprint</td><td>Speed, agility</td><td>100</td></tr><tr><td>Lift</td><td>Strength, power</td><td>120</td></tr><tr><td>Cycle</td><td>Throughput, handling</td><td>140</td></tr><tr><td>Marksman</td><td>Accuracy, autonomy</td><td>160</td></tr><tr><td>Ascent</td><td>Climbing, autonomy</td><td>180</td></tr></table></div>
+<svg viewBox="0 0 420 200" role="img" aria-label="Venue overview"><rect class="f" x="10" y="10" width="400" height="180" fill="none"/>
+<rect class="f" x="30" y="25" width="80" height="70"/><text x="70" y="55" text-anchor="middle">LIFT</text><text x="70" y="70" text-anchor="middle">3.6×3.6 m</text>
+<rect class="f" x="125" y="25" width="80" height="70"/><text x="165" y="55" text-anchor="middle">CYCLE</text><text x="165" y="70" text-anchor="middle">3.6×3.6 m</text>
+<rect class="f" x="30" y="105" width="80" height="70"/><text x="70" y="135" text-anchor="middle">MARKSMAN</text><text x="70" y="150" text-anchor="middle">3.6×3.6 m</text>
+<rect class="f" x="125" y="105" width="80" height="70"/><text x="165" y="135" text-anchor="middle">ASCENT</text><text x="165" y="150" text-anchor="middle">3.6×3.6 m</text>
+<rect class="f" x="235" y="25" width="45" height="150"/><text x="257" y="105" text-anchor="middle" transform="rotate(-90 257 105)">SPRINT 2×7 m lane</text></svg>
+<p class="cap">Figure 1. Typical venue layout (not to scale).</p>
+</section>
+
+<section id="robot" data-t="Robot rules">
+<h2>Building a legal robot</h2>
+<div class="box key"><b>Size.</b> Must fit a 40×40×40 cm cube on its own at every run start and at inspection. After the start signal it may expand to at most <b>75 cm</b> horizontally and <b>120 cm</b> tall. Bring your own <b>rigid</b> container (cardboard or fabric not allowed unless the Head Judge approves at that event).</div>
+<h3>Weight and power</h3>
+<ul><li><b>15 kg max</b> including batteries and stored air. Console, tether, tools, laptop don't count.</li>
+<li>Electric only. No internal combustion, fuel or combustion of any kind.</li>
+<li>Any battery ≤ <b>24 V nominal</b>; control system ≤ 24 V. Commercially made, undamaged, secured, with an easy-to-reach main switch or breaker. Any chemistry allowed.</li>
+<li>Store and charge in a <b>fire-safe charging bag</b>.</li></ul>
+<h3>Stored energy, pneumatics, hydraulics</h3>
+<ul><li>Springs and elastics are allowed. You may pre-load, but <b>the robot itself must be able to fully restore that energy</b> during the run (e.g. re-wind a winch).</li>
+<li>Pneumatics: <b>60 psi max anywhere</b>, a visible gauge and a relief valve are required.</li>
+<li>Hydraulics (if used): under 100 psi, non-flammable food-grade fluid.</li></ul>
+<h3>Control</h3>
+<ul><li>One control link only: a tether <i>or</i> one wireless link on license-free bands (2.4 / 5 GHz).</li>
+<li>Tether must stay completely slack and can't be tied to anything or anyone. Tension draws a Minor Penalty; wireless is encouraged.</li>
+<li>Teams must be able to disable the robot on request. Your laptop can't control or assist the robot during a run.</li></ul>
+<h3>Required and prohibited</h3>
+<div class="grid"><div class="box ok"><b>Required</b><ul><li>Team Identifier visible</li><li>Flat 3×3 cm area for a Pair marker</li><li>Ascent anchor point near the top, rated for full robot weight</li><li>Gauge + relief valve if pneumatic</li></ul></div>
+<div class="box key"><b>Prohibited</b><ul><li>Flight or thrust lift (<b>tethered or not</b>)</li><li>Sharp edges, shattering materials, hazardous chemicals</li><li>Lasers above Class 1, pyrotechnics</li><li>Unsafe launches or objects leaving the Field</li><li>Anything that damages Field, objects or robots</li></ul></div></div>
+</section>
+
+<section id="safety" data-t="Safety & inspection">
+<h2>Safety and inspection</h2>
+<div class="box key"><b>Safety beats performance.</b> Officials can stop any robot, run or activity at any time. The Head Judge has final authority.</div>
+<ul><li><b>Eye protection:</b> bring and wear your own ANSI Z87.1-2020 / EN166 rated eyewear whenever robots are worked on or run. ASME provides none.</li>
+<li><b>Batteries:</b> fire-safe bag for storage and charging; remove and report damaged or swollen batteries immediately.</li>
+<li><b>Stop fast:</b> main switch or control link must stop the robot quickly; the Crew must disable it when asked.</li>
+<li><b>Powering:</b> at the team table you may power the robot for repair but <b>not drive it</b>. Drive only on a Field during your run.</li></ul>
+<h3>Inspection checklist (self-check first)</h3>
+<div class="box"><ul style="list-style:none;padding:0" id="chk"></ul><small style="color:var(--mut)">Ticks are local to your browser view and reset on reload.</small></div>
+<p>Allow 5–10 minutes. Inspection happens at your first Discipline. Between runs you can do minor repairs (equivalent parts, code). <b>Major changes to fit, form or function</b>, or anything affecting size, weight or safety, need <b>re-inspection</b>.</p>
+</section>
+
+<section id="ops" data-t="Event day & conduct">
+<h2>Event day, runs and conduct</h2>
+<div class="grid"><div class="box"><b>Day 1: Qualification</b><br>Check-in, inspection, one run at each of the five Disciplines. All-Around Scores posted and teams ranked.</div><div class="box"><b>Day 2: Playoff and awards</b><br>Pairs chosen, elimination bracket, then awards.</div></div>
+<h3>How a run goes</h3>
+<ul><li>Called to a Discipline: <b>60 seconds</b> to place the robot in the Starting Zone. Not ready? The run starts anyway. Not present at all = disqualified from that run (no grace period).</li>
+<li>Robot comes out of its container and sits in the Starting Zone on its own, then the Crew steps back. One person presses one start control.</li>
+<li><b>Autonomous (30 s):</b> nobody touches the robot or console, no inputs. Breaking this voids the autonomous bonus.</li>
+<li><b>Crewed (2 min):</b> up to <b>4 Crew</b> operate via the Operator Console. Only Crew can talk to Officials at the Field.</li>
+<li>After the run the Scoring Official shows your score; <b>confirm before leaving</b>. Once confirmed or once you leave, it's final. No video replay.</li>
+<li>Check the Field from the viewing area <b>before that Discipline's first run</b>; after that it's accepted as-is.</li></ul>
+<h3>Penalty ladder</h3>
+<div class="tw"><table><tr><th>Level</th><th>Effect</th></tr><tr><td>Warning</td><td>Verbal, no score effect</td></tr><tr><td>Minor Penalty</td><td>−10 from the run score (or the affected scoring removed)</td></tr><tr><td>Voided Run</td><td>Run scores 0 (unsafe operation, touching robot mid-run, leaving Field)</td></tr><tr><td>Formal Warning</td><td>Second one becomes Match DQ</td></tr><tr><td>Match / Event DQ</td><td>Zero for the run / removed from event</td></tr></table></div>
+<div class="box key"><b>Never:</b> defend, block or interfere with another team (even in playoffs); grapple, attach to, tip or entangle another robot; touch your robot during a run except when an Official allows a safety stop (which ends the run).</div>
+<h3>Eligibility quick facts</h3>
+<ul><li>Undergrad engineering students who are current ASME Student Members; one team per student; one robot per team.</li>
+<li>A Team Captain (ASME member) and at least one faculty or professional mentor of record. Mentors advise but the robot must be student work.</li>
+<li>Rule questions go through the official Q&A form; answers are published every two weeks.</li></ul>
+</section>
+
+<section id="disc" data-t="The 5 Disciplines">
+<h2>The five Disciplines</h2>
+<div class="sub" id="dsub"></div>
+
+<div class="dp" data-d="Sprint"><h3 style="margin-top:0">The Sprint · 100 pts</h3>
+<p>Slalom through 4 Gates (60 cm openings, in order, alternating sides) and over 2 Hurdles (5 cm tall) in a 2×7 m lane as fast as possible. Clock stops when the robot <b>fully crosses the finish</b>; no finish = 0.</p>
+<svg viewBox="0 0 260 390" width="230" role="img" aria-label="Sprint lane"><rect class="f" x="60" y="10" width="100" height="350"/>
+<line class="r" x1="60" y1="20" x2="160" y2="20"/><text x="166" y="24">FINISH</text><line class="l" x1="60" y1="360" x2="160" y2="360"/><text x="166" y="364">START</text>
+<path class="l" d="M90 100H160M60 170H130M90 240H160M60 310H130"/><text x="20" y="104">Gate</text>
+<rect class="o" x="60" y="135" width="30" height="5"/><rect class="o" x="130" y="275" width="30" height="5"/><text x="20" y="139">Hurdle</text>
+<rect class="d" x="95" y="335" width="30" height="24"/><text x="100" y="349" style="font-size:9px">start</text><text x="10" y="382">Schematic, 7 m long, 2 m wide, gates ~1.4 m apart</text></svg>
+<div class="box ok"><b>Score</b> = 100 − 1 per second of finish time − penalties + auto bonus. Range 0–100.<ul><li>Gate missed −15 · Hurdle gone around −10 · Reset −15</li><li><b>+10</b> if the robot passes Gate 1 on its own in the autonomous phase</li></ul></div></div>
+
+<div class="dp" data-d="Lift" hidden><h3 style="margin-top:0">The Lift · 120 pts</h3>
+<p>Carry Dumbbells (Light 1 kg, Standard 2 kg, Heavy 4 kg, ~15–20 cm across) from the loading zone onto a 3-tier podium (20 / 40 / 60 cm, multipliers ×1 / ×2 / ×3). Scores if resting on a tier and supported by the podium <b>at the final buzzer</b>.</p>
+<svg viewBox="0 0 440 210" role="img" aria-label="Lift layout and podium"><rect class="f" x="10" y="10" width="190" height="190"/><rect class="l" x="70" y="20" width="70" height="26"/><text x="105" y="37" text-anchor="middle">podium</text>
+<line class="d" x1="150" y1="46" x2="150" y2="90"/><text x="154" y="72">1.0 m</text><rect class="o" x="60" y="90" width="90" height="26" style="opacity:.4"/><text x="105" y="107" text-anchor="middle">loading zone</text>
+<rect class="d" x="75" y="160" width="60" height="28"/><text x="105" y="178" text-anchor="middle">start zone</text>
+<rect class="f" x="250" y="150" width="45" height="30"/><rect class="f" x="300" y="115" width="45" height="65"/><rect class="f" x="350" y="70" width="45" height="110"/>
+<text x="272" y="196" text-anchor="middle">20 cm ×1</text><text x="322" y="196" text-anchor="middle">40 cm ×2</text><text x="372" y="196" text-anchor="middle">60 cm ×3</text></svg>
+<div class="box ok"><table><tr><th>Dumbbell</th><th>Tier 1</th><th>Tier 2</th><th>Tier 3</th></tr><tr><td>Light 1 kg</td><td>5</td><td>10</td><td>15</td></tr><tr><td>Standard 2 kg</td><td>10</td><td>20</td><td>30</td></tr><tr><td>Heavy 4 kg</td><td>20</td><td>40</td><td>60</td></tr></table>
+<ul><li>Autonomous placements ×1.5. Max 120.</li><li>Stacking allowed; the stack counts at the tier of its bottom weight, but if <b>any</b> weight would fall without the robot, the whole stack scores nothing.</li></ul></div></div>
+
+<div class="dp" data-d="Cycle" hidden><h3 style="margin-top:0">The Cycle · 140 pts <span class="tag">playoff basis</span></h3>
+<p>Collect soft 65 mm balls and pass them through goals. Low Goal: 40 cm floor-level opening. High Goal: 30 cm opening centred at 1.0 m. Ball supply ~1.8 m from the goals. A ball counts when it passes fully through.</p>
+<svg viewBox="0 0 440 210" role="img" aria-label="Cycle layout and goals"><rect class="f" x="10" y="10" width="190" height="190"/><rect class="o" x="45" y="14" width="40" height="8"/><rect x="125" y="14" width="40" height="8" fill="var(--teal)"/><text x="65" y="38" text-anchor="middle">High</text><text x="145" y="38" text-anchor="middle">Low</text>
+<line class="d" x1="175" y1="24" x2="175" y2="110"/><text x="145" y="78">~1.8 m</text><rect class="o" x="60" y="110" width="90" height="26" style="opacity:.4"/><text x="105" y="127" text-anchor="middle">ball supply</text><rect class="d" x="60" y="160" width="90" height="28"/><text x="105" y="178" text-anchor="middle">start zone</text>
+<line x1="230" y1="180" x2="420" y2="180" stroke="var(--mut)" stroke-width="3"/><rect class="l" x="250" y="145" width="35" height="35"/><text x="267" y="196" text-anchor="middle">Low 40 cm</text>
+<line x1="340" y1="180" x2="340" y2="80" stroke="var(--mut)" stroke-width="3"/><ellipse class="l" cx="348" cy="78" rx="8" ry="16" style="stroke:var(--gold)"/><text x="360" y="60">High: 30 cm, at 1.0 m</text></svg>
+<div class="box ok"><b>Score</b> = (Low × 2) + (High × 5), autonomous balls doubled. Max 140.<ul><li>Control at most <b>3 balls</b> at once; herding or pushing more draws a Minor Penalty.</li></ul></div></div>
+
+<div class="dp" data-d="Marksman" hidden><h3 style="margin-top:0">The Marksman · 160 pts</h3>
+<p>Land 8 Bean Bags (13 cm, 150–200 g) on a 60 cm ringed floor Target whose center is <b>2.5 m</b> beyond the No-Cross line. Too far to reach, so <b>launch, toss or slide</b>. The robot starts holding at most one bag; a Loader (one Crew member) hands bags over one at a time in the Crewed Phase.</p>
+<svg viewBox="0 0 300 250" width="270" role="img" aria-label="Marksman layout"><rect class="f" x="10" y="10" width="280" height="230"/>
+<circle cx="150" cy="55" r="28" fill="none" stroke="var(--red)" stroke-width="2"/><circle cx="150" cy="55" r="20" class="l"/><circle cx="150" cy="55" r="12" class="l"/><circle cx="150" cy="55" r="5" fill="var(--gold)"/><text x="190" y="50">Target 60 cm</text><text x="190" y="63">20/16/12/8/4</text>
+<line class="d" x1="250" y1="55" x2="250" y2="185"/><text x="256" y="125">2.5 m</text>
+<line class="r" x1="20" y1="185" x2="280" y2="185"/><text x="24" y="179" style="fill:var(--red)">NO-CROSS ZONE line</text>
+<rect class="o" x="24" y="200" width="70" height="28" style="opacity:.4"/><text x="59" y="218" text-anchor="middle">8 bags</text><rect class="d" x="120" y="200" width="90" height="28"/><text x="165" y="218" text-anchor="middle">start zone</text></svg>
+<div class="box ok"><b>Score</b> = sum of ring values (bullseye out: 20, 16, 12, 8, 4; more than half inside the ring). Autonomous bag doubled. Max 160.<ul><li>Floor-touching parts stay behind the line; an arm or launcher may reach over it <b>in the air</b>.</li><li>Autonomous: the robot may launch its starting bag and fetch more from the loading station, with no human help.</li><li><b>Special rule:</b> launchers must start each run <b>unloaded</b>. No pre-tensioned launchers here.</li></ul></div></div>
+
+<div class="dp" data-d="Ascent" hidden><h3 style="margin-top:0">The Ascent · 180 pts <span class="tag">most points</span></h3>
+<p>Climb a vertical wall (≥ 2.2 m) with rungs, holds and bars. Height is measured floor to the <b>lowest point</b> of the robot. Only the highest Band held stably <b>at the final buzzer</b> counts; touching the floor at the buzzer = 0. The robot carries nothing up.</p>
+<svg viewBox="0 0 340 260" role="img" aria-label="Ascent wall"><rect class="f" x="140" y="10" width="24" height="220"/><rect class="o" x="120" y="230" width="90" height="10" style="opacity:.5"/>
+<g class="d"><line x1="30" y1="55" x2="300" y2="55"/><line x1="30" y1="105" x2="300" y2="105"/><line x1="30" y1="155" x2="300" y2="155"/><line x1="30" y1="205" x2="300" y2="205"/></g>
+<text x="180" y="50">Summit 2.0 m+ · 120</text><text x="180" y="100">Band 3 · 1.5 m · 90</text><text x="180" y="150">Band 2 · 1.0 m · 60</text><text x="180" y="200">Band 1 · 0.5 m · 30</text>
+<rect class="d" x="60" y="200" width="45" height="30"/><text x="65" y="218">start</text><text x="10" y="254">Autonomous ×1.5 if the held band was first reached in auto</text></svg>
+<div class="box ok"><table><tr><th>Held at buzzer</th><th>Crewed</th><th>Reached in auto (×1.5)</th></tr><tr><td>Band 1</td><td>30</td><td>45</td></tr><tr><td>Band 2</td><td>60</td><td>90</td></tr><tr><td>Band 3</td><td>90</td><td>135</td></tr><tr><td>Summit</td><td>120</td><td>180</td></tr></table>
+<ul><li>An Official clips a slack safety line to your <b>anchor point</b> before each run. It may not help you climb.</li></ul></div></div>
+</section>
+
+<section id="score" data-t="Scoring & playoff">
+<h2>Scoring, rankings and the playoff</h2>
+<div class="box key"><b>All-Around Score</b> = best Discipline Score in each of the five Disciplines, up to 700. It ranks Day 1 and seeds the playoff. Maximums are applied <b>after</b> all bonuses.</div>
+<h3>Tiebreakers</h3><ol><li>Higher best-Discipline score, then second-best, and so on</li><li>Faster best finish time in the Sprint</li><li>Coin toss by the Head Judge</li></ol>
+<h3>Day 2 playoff</h3>
+<ul><li>Top-ranked teams (by All-Around) each invite one partner to form <b>Pairs</b> (typically 4–8). All Pairs are formed before any match. A declined invite stays available for others.</li>
+<li>Seeded single-elimination; top seeds get byes if the count isn't a power of two.</li>
+<li>Every match = <b>The Cycle + one Featured Discipline</b>. Default: semifinals Sprint, final Ascent, third-place Marksman.</li>
+<li>Match score = sum of both partners' runs in both Disciplines (four scores). At big events each Pair may run just one robot per Discipline. Higher total advances.</li>
+<li>No defense of any kind, in any match.</li></ul>
+<div class="box ok"><b>Design takeaway.</b> Your partner is chosen for complementary strengths, and the Cycle is always played in the playoff, so a solid Cycle robot is valuable for getting picked.</div>
+</section>
+
+<section id="awards" data-t="Awards & notebook">
+<h2>Awards and the engineering design report</h2>
+<div class="tw"><table><tr><th>Award</th><th>What it rewards</th></tr>
+<tr><td>PODIUM Champion (Gold/Silver/Bronze Pair)</td><td>Playoff result. Gold $1,000 ($750 higher seed / $250 ally); Silver $500; Bronze $250</td></tr>
+<tr><td>All-Around</td><td>Best qualification total</td></tr><tr><td>Discipline trophies</td><td>Top score in each of the 5 Disciplines</td></tr>
+<tr><td>Laurel</td><td>Best complete program: performance + report + conduct</td></tr><tr><td>Blueprint</td><td>Clearest, most rigorous documentation and process</td></tr>
+<tr><td>Ingenuity</td><td>Most original or clever solution</td></tr><tr><td>Spirit of the Games</td><td>Conduct and camaraderie</td></tr>
+<tr><td>Rising Star</td><td>Rookie team (≥ 51% first or second-year members)</td></tr></table></div>
+<h3>Design report rules</h3>
+<div class="box key"><ul><li><b>Optional</b> but required for any judged award (Laurel, Blueprint, Ingenuity, Spirit, Rising Star).</li>
+<li>Due <b>30 days before the event's first day</b> through the official online form. Late = not accepted.</li>
+<li>Single PDF, <b>10–30 pages</b> (cover, references and appendix don't count). Pages past 30 aren't read.</li>
+<li>Doesn't affect any performance score or the playoff.</li></ul></div>
+<h3>What to keep in the notebook all season</h3>
+<ul><li>Problem analysis, concept generation and selection</li><li>Design decisions and trade-offs</li><li>Analysis and calculations</li><li>Testing and iteration</li><li>Team and project management</li></ul>
+<h3>Rubric (5 categories × 0–4 = 20)</h3>
+<div class="tw"><table><tr><th>Category</th><th>Exemplary (4) looks like</th></tr>
+<tr><td>Design process and decisions</td><td>Clear path from requirements to concepts to a justified design, with trade-offs</td></tr>
+<tr><td>Engineering analysis</td><td>Sound analysis of loads, motion, power and tolerances that drives real decisions</td></tr>
+<tr><td>Build, testing, iteration</td><td>Repeated test-and-improve cycles showing what changed and why</td></tr>
+<tr><td>Documentation quality</td><td>Clear, organized, easy for a newcomer to follow</td></tr>
+<tr><td>Project and team management</td><td>Roles, schedule, resource tracking carried through the season</td></tr></table></div>
+<p><small>Ties: higher Engineering analysis score, then Design process, then the panel.</small></p>
+<div class="box ok"><b>Look ahead (CY2028).</b> Same robot class and rules expected, so build modular. Expect harder or new Disciplines, more autonomous points and possibly defensive play.</div>
+</section>
+
+<section id="team" data-t="Our team notes">
+<h2>What we came up with</h2>
+<p>Transcribed from our whiteboard photos, then checked against the rulebook. Items marked <span class="tag">check</span> need a closer look.</p>
+<div class="grid">
+<div class="box ok"><b>Must nail (non-negotiable)</b><ul><li>40×40×40 cm cube</li><li>15 kg limit</li><li>Must do every event</li></ul></div>
+<div class="box ok"><b>Must consider</b><ul><li>No flight, no combustion</li><li>24 V whole system, 24 V max per battery</li><li>Pass inspection</li><li>Anchor point for the climb</li></ul></div>
+<div class="box ok"><b>Robot design</b><ul><li>Expandable</li><li>Working pressure of 60 psi</li><li>Mech-E energy can be pre-stored</li><li>24 V battery</li></ul></div>
+<div class="box ok"><b>Branding</b><ul><li>Team logo design</li><li>Team logo / Team Identifier on the robot</li></ul></div>
+</div>
+<h3>Event strategy</h3>
+<div class="tw"><table><tr><th>Event</th><th>Our take</th></tr>
+<tr><td>Sprint</td><td>Time to finish; gates, hurdle, automate (go for the auto bonus)</td></tr>
+<tr><td>Lift</td><td>Go heavy and as tall as possible</td></tr>
+<tr><td>Cycle</td><td>Throughput; the whiteboard notes here are hard to read</td></tr>
+<tr><td>Marksman</td><td>Launcher; autonomous scoring (note partly unclear)</td></tr>
+<tr><td>Ascent</td><td>Get the bottom of the robot as high as possible (Summit)</td></tr></table></div>
+<h3>Requirements we listed</h3>
+<div class="grid"><div class="box"><b>Objectives</b><ul><li>Collect and launch objects by itself</li><li>Climb the wall</li><li>Launch bean bags 2.5 m</li><li>Intake and output, launcher speed</li><li>Pick up to 4 kg of dumbbells</li><li>During autonomous, pass through the gate</li></ul></div>
+<div class="box"><b>Constraints</b><ul><li>Has to pass gates, 60 cm</li><li>Go over a 5 cm hurdle</li><li>Picking and placing dumbbells</li><li>Intake and launcher system</li><li>Launcher can cross the line; the robot cannot</li></ul></div></div>
+<div class="box"><b>Also on the board:</b> a Cycle / Sprint / Ascent comparison chart (purple axes), a "Documentation" item, and priority slots 1), 2), 3) that were left blank. Fill those in as a team.</div>
+<h3>Rulebook cross-check</h3>
+<div class="box key"><span class="tag">check</span> <b>"Mech-E can be pre-stored."</b> True, but the robot must be able to restore that energy itself (Rule 7.3-3). In the <b>Marksman</b>, launchers must start unloaded, so pre-tensioned launchers are banned there.</div>
+<div class="box key"><span class="tag">check</span> <b>"Launcher can cross the line."</b> Only in the air. Anything touching the floor must stay behind the No-Cross line.</div>
+<div class="box key"><span class="tag">check</span> <b>"Working PSI of 60."</b> 60 psi is the legal <i>maximum</i>. Design a margin below it, and add the visible gauge and relief valve.</div>
+<div class="box key"><span class="tag">check</span> <b>"Pick up to 4 kg of dumbbells."</b> A Heavy dumbbell is 4 kg, and the robot plus load must still be ≤ 15 kg, so budget weight carefully.</div>
+<div class="box ok"><b>Extra things the rules suggest</b><ul><li>The Ascent is worth the most (180) and autonomous climbing is worth ×1.5, so an early climb design pays off.</li><li>The tether must stay slack, so wireless is the safer choice.</li><li>Team logo: it's the Team Identifier, and you also need the 3×3 cm flat spot for the Pair marker.</li><li>Report deadline is 30 days before the event; start the notebook now.</li></ul></div>
+</section>
+</main>
+<script>
+const secs=[...document.querySelectorAll('section')],nav=document.getElementById('nav');
+secs.forEach(s=>{const b=document.createElement('button');b.textContent=s.dataset.t;b.setAttribute('role','tab');if(s.id==='team')b.className='team';b.onclick=()=>show(s.id);b.dataset.id=s.id;nav.appendChild(b)});
+function show(id){secs.forEach(s=>s.hidden=s.id!==id);nav.querySelectorAll('button').forEach(b=>b.setAttribute('aria-selected',b.dataset.id===id));try{history.replaceState(null,'','#'+id)}catch(e){}window.scrollTo(0,0)}
+const dps=[...document.querySelectorAll('.dp')],ds=document.getElementById('dsub');
+dps.forEach((p,i)=>{const b=document.createElement('button');b.textContent=p.dataset.d;b.dataset.d=p.dataset.d;b.onclick=()=>sd(p.dataset.d);ds.appendChild(b)});
+function sd(n){dps.forEach(p=>p.hidden=p.dataset.d!==n);ds.querySelectorAll('button').forEach(b=>b.setAttribute('aria-selected',b.dataset.d===n))}
+sd('Sprint');
+const items=['Exactly one robot','Fits 40×40×40 cm cube alone','Expands to ≤ 75 cm wide, ≤ 120 cm tall','≤ 15 kg as competed','Electric only, no combustion','Battery ≤ 24 V, secure, undamaged, main switch','Fire-safe charging bag present','Stored-energy pre-load restorable by robot','No flight or aerial propulsion','One control link, license-free band, can be disabled, tether slack','Pneumatics: gauge ≤ 60 psi and relief valve','Ascent anchor point, accessible, full-weight rated','Team Identifier + 3×3 cm flat Pair marker area','No hazardous features, safe edges','Own eye protection marked Z87 / EN166'];
+const ck=document.getElementById('chk');items.forEach((t,i)=>{const l=document.createElement('li');l.innerHTML='<label><input type="checkbox"> '+t+'</label>';ck.appendChild(l)});
+const h=location.hash.slice(1);show(secs.some(s=>s.id===h)?h:'start');
+</script></body></html>
