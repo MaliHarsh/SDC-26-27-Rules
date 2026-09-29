@@ -33,6 +33,12 @@ svg text{font:11px Barlow,sans-serif;fill:var(--ink)}svg .f{fill:var(--soft);str
 .tag{display:inline-block;font-size:13px;font-weight:600;padding:1px 8px;border-radius:10px;background:var(--red);color:#fff}
 .wb{font-family:'Barlow',cursive;background:var(--card);border:2px dashed var(--line);border-radius:8px;padding:12px 16px}
 summary{cursor:pointer;font-weight:700}
+
+#cb{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:20;background:var(--red);color:#fff;border:0;border-radius:24px;padding:12px 18px;font:700 16px Barlow,sans-serif;cursor:pointer;box-shadow:0 2px 10px #0004}
+#cp{position:fixed;right:16px;bottom:calc(72px + env(safe-area-inset-bottom,0px));z-index:20;width:min(380px,calc(100vw - 32px));height:min(520px,70vh);background:var(--card);border:1px solid var(--line);border-radius:10px;display:flex;flex-direction:column;box-shadow:0 4px 24px #0005}
+#cp[hidden]{display:none}#ch{padding:10px 14px;border-bottom:1px solid var(--line);font-weight:700}#ch small{display:block;font-weight:400;color:var(--mut)}
+#cm{flex:1;overflow-y:auto;padding:10px 12px}.m{margin:6px 0;padding:8px 11px;border-radius:8px;max-width:88%;white-space:pre-wrap}.m.u{background:var(--teal);color:#fff;margin-left:auto}.m.a{background:var(--soft)}
+#cf{display:flex;gap:6px;padding:8px;border-top:1px solid var(--line)}#ci{flex:1;font:15px Barlow,sans-serif;padding:8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink)}#cf button{background:var(--teal);color:#fff;border:0;border-radius:6px;padding:0 14px;font-weight:700;cursor:pointer}
 </style></head><body>
 <header><h1>PODIUM · CY2027 Team Guide</h1><p>ASME Student Design Competition · Stage 1 of the Engineering Games · Rules v1.0 (Aug 2026)</p></header>
 <nav id="nav" role="tablist"></nav>
@@ -231,6 +237,25 @@ summary{cursor:pointer;font-weight:700}
 <div class="box ok"><b>Extra things the rules suggest</b><ul><li>The Ascent is worth the most (180) and autonomous climbing is worth ×1.5, so an early climb design pays off.</li><li>The tether must stay slack, so wireless is the safer choice.</li><li>Team logo: it's the Team Identifier, and you also need the 3×3 cm flat spot for the Pair marker.</li><li>Report deadline is 30 days before the event; start the notebook now.</li></ul></div>
 </section>
 </main>
+<button id="cb" aria-expanded="false">Ask the rules</button>
+<div id="cp" hidden role="dialog" aria-label="Rules assistant"><div id="ch">Rules assistant<small>AI answers from this guide. Not official; check the ASME rulebook and Q&amp;A.</small></div><div id="cm" aria-live="polite"></div>
+<form id="cf"><input id="ci" placeholder="e.g. Can I pre-load a spring launcher?" autocomplete="off" maxlength="500"><button>Send</button></form></div>
+<script>
+const WORKER_URL='https://sdc-rules-bot.harshvmali26.workers.dev'; // paste your Cloudflare Worker URL here
+const cb=document.getElementById('cb'),cp=document.getElementById('cp'),cm=document.getElementById('cm'),ci=document.getElementById('ci');let hist=[];
+function add(t,c){const d=document.createElement('div');d.className='m '+c;d.textContent=t;cm.appendChild(d);cm.scrollTop=cm.scrollHeight;return d}
+function pick(q){const t=document.querySelector('main').textContent.replace(/\s+/g,' ').trim(),ch=[];for(let i=0;i<t.length;i+=700)ch.push(t.slice(i,i+800));
+const w=(hist.filter(m=>m.role==='user').slice(-2).map(m=>m.content).join(' ')).toLowerCase().match(/[a-z0-9]{4,}/g)||[];const set=new Set(w);
+const sc=ch.map((c,i)=>{const l=c.toLowerCase();let n=0;set.forEach(x=>{if(l.includes(x))n++});return{i,n}}).sort((a,b)=>b.n-a.n).slice(0,11).sort((a,b)=>a.i-b.i);
+return sc.map(x=>ch[x.i]).join('\n---\n')}
+cb.onclick=()=>{cp.hidden=!cp.hidden;cb.setAttribute('aria-expanded',!cp.hidden);if(!cp.hidden){if(!cm.children.length)add('Hi! Ask me anything about the PODIUM rules: robot limits, scoring, safety, the playoff, or the design report.','a');ci.focus()}};
+document.getElementById('cf').onsubmit=async e=>{e.preventDefault();const q=ci.value.trim();if(!q)return;ci.value='';add(q,'u');hist.push({role:'user',content:q});
+if(!WORKER_URL){add('The assistant is not connected yet. The site owner needs to add the Worker URL.','a');hist.pop();return}
+const w=add('Thinking...','a');
+try{const r=await fetch(WORKER_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:hist.slice(-8),context:pick(q)})});
+const j=await r.json();if(!r.ok||!j.answer)throw 0;w.textContent=j.answer;hist.push({role:'assistant',content:j.answer})}
+catch(x){w.textContent='Sorry, something went wrong. Please try again in a moment.';hist.pop()}};
+</script>
 <script>
 const secs=[...document.querySelectorAll('section')],nav=document.getElementById('nav');
 secs.forEach(s=>{const b=document.createElement('button');b.textContent=s.dataset.t;b.setAttribute('role','tab');if(s.id==='team')b.className='team';b.onclick=()=>show(s.id);b.dataset.id=s.id;nav.appendChild(b)});
