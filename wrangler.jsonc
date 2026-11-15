@@ -1,0 +1,8 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "sdc-rules-bot",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-11-01",
+  "ai": {"binding": "AI"},
+  "vars": {"ALLOWED_ORIGIN": "https://maliharsh.github.io"}
+}
